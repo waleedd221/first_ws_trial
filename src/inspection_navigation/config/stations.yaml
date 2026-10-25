@@ -1,0 +1,10 @@
+start: {x: -2.0, y: -0.5, yaw: 0.0}   # where the demo spawns the robot
+
+stations:
+  - {name: station_1, x: 2.0610761642456055, y: -0.033795081079006195
+, yaw: 0.0}
+  - {name: station_2, x: 0.04196144640445709
+, y: 1.9703283309936523, yaw: 1.57}
+  - {name: station_3, x: 0.057292353361845016
+, y: -2.0346975326538086
+, yaw: 3.14}
