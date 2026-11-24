@@ -1,0 +1,307 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="gp_test">
+  <link name="base_link" />
+  <joint name="base_link_to_Car_Center" type="fixed">
+    <parent link="base_link" />
+    <child link="Car_Center" />
+    <origin xyz="0 0 0.1495" rpy="-1.57079632679 0 -1.57079632679" />
+  </joint>
+  <link name="Car_Center">
+    <inertial>
+      <origin xyz="0.013234 -0.070332 -0.0014796" rpy="0 0 0" />
+      <mass value="9.4689" />
+      <inertia ixx="0.13302" ixy="-2.4301E-05" ixz="1.3937E-05" iyy="0.18244" iyz="4.5325E-05" izz="0.065503" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gp_test/meshes/Car_Center.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gp_test/meshes/Car_Center.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="FR_Wheel">
+    <inertial>
+      <origin xyz="-0.0039543 1.1846E-06 8.0769E-15" rpy="0 0 0" />
+      <mass value="5.5536" />
+      <inertia ixx="0.018183" ixy="5.5986E-13" ixz="-5.23E-19" iyy="0.009822" iyz="-2.9322E-18" izz="0.0098219" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gp_test/meshes/FR_Wheel.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.77647 0.75686 0.73725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gp_test/meshes/FR_Wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="FR_Wheel" type="continuous">
+    <origin xyz="0.267 0.022 0.185" rpy="0 0 0" />
+    <parent link="Car_Center" />
+    <child link="FR_Wheel" />
+    <axis xyz="1 0 0" />
+  </joint>
+  <link name="FL_Wheel">
+    <inertial>
+      <origin xyz="0.0040343 1.1846E-06 -1.0825E-15" rpy="0 0 0" />
+      <mass value="5.5536" />
+      <inertia ixx="0.018183" ixy="-5.5986E-13" ixz="2.9045E-18" iyy="0.009822" iyz="-2.4239E-18" izz="0.0098219" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gp_test/meshes/FL_Wheel.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.77647 0.75686 0.73725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gp_test/meshes/FL_Wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="FL_Wheel" type="continuous">
+    <origin xyz="-0.267 0.022 0.185" rpy="0 0 0" />
+    <parent link="Car_Center" />
+    <child link="FL_Wheel" />
+    <axis xyz="1 0 0" />
+  </joint>
+  <link name="RR_Wheel">
+    <inertial>
+      <origin xyz="-0.0039434 1.1846E-06 3.797E-14" rpy="0 0 0" />
+      <mass value="5.5536" />
+      <inertia ixx="0.018183" ixy="5.5987E-13" ixz="-6.9232E-18" iyy="0.009822" iyz="1.8231E-18" izz="0.0098219" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gp_test/meshes/RR_Wheel.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.77647 0.75686 0.73725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gp_test/meshes/RR_Wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="RR_Wheel" type="continuous">
+    <origin xyz="0.267 0.022 -0.185" rpy="0 0 0" />
+    <parent link="Car_Center" />
+    <child link="RR_Wheel" />
+    <axis xyz="1 0 0" />
+  </joint>
+  <link name="RL_Wheel">
+    <inertial>
+      <origin xyz="0.0039434 1.1846E-06 3.5416E-14" rpy="0 0 0" />
+      <mass value="5.5536" />
+      <inertia ixx="0.018183" ixy="-5.5986E-13" ixz="-8.4275E-18" iyy="0.009822" iyz="3.929E-18" izz="0.0098219" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gp_test/meshes/RL_Wheel.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.776 0.756 0.737 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gp_test/meshes/RL_Wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="RL_Wheel" type="continuous">
+    <origin xyz="-0.267 0.022 -0.185" rpy="0 0 0" />
+    <parent link="Car_Center" />
+    <child link="RL_Wheel" />
+    <axis xyz="1 0 0" />
+  </joint>
+  <link name="lidar_bracket_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.060 0.090 0.005" />
+      </geometry>
+      <material name="inclined_mount_plate">
+        <color rgba="0.22 0.25 0.29 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0.014" rpy="0 0 0" />
+      <geometry>
+        <cylinder radius="0.012" length="0.025" />
+      </geometry>
+      <material name="lidar_short_standoff">
+        <color rgba="0.57 0.61 0.65 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="lidar_bracket_mount_joint" type="fixed">
+    <parent link="base_link" />
+    <child link="lidar_bracket_link" />
+    <origin xyz="0.291 0 0.318" rpy="0 0.94 0" />
+  </joint>
+  <link name="lidar_link">
+    <visual>
+      <origin xyz="0 0 -0.015" rpy="0 0 0" />
+      <geometry>
+        <cylinder radius="0.038" length="0.030" />
+      </geometry>
+      <material name="lidar_black">
+        <color rgba="0.10 0.13 0.17 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="lidar_mount_joint" type="fixed">
+    <parent link="lidar_bracket_link" />
+    <child link="lidar_link" />
+    <origin xyz="0 0 0.043" rpy="0 0 0" />
+  </joint>
+  <link name="imu_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.028 0.020 0.004" />
+      </geometry>
+      <material name="imu_blue">
+        <color rgba="0.05 0.23 0.75 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="imu_mount_joint" type="fixed">
+    <parent link="base_link" />
+    <child link="imu_link" />
+    <origin xyz="0 0 0.260" rpy="0 0 0" />
+  </joint>
+  <link name="camera_stand_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.022 0.028 0.200" />
+      </geometry>
+      <material name="stand_aluminium">
+        <color rgba="0.58 0.62 0.68 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 -0.100" rpy="0 0 0" />
+      <geometry>
+        <box size="0.065 0.065 0.005" />
+      </geometry>
+      <material name="stand_base">
+        <color rgba="0.30 0.33 0.37 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0.021 0 0.085" rpy="0 0 0" />
+      <geometry>
+        <box size="0.042 0.022 0.008" />
+      </geometry>
+      <material name="stand_upper_arm">
+        <color rgba="0.48 0.52 0.58 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0.024 0 0.017" rpy="0 0 0" />
+      <geometry>
+        <box size="0.048 0.022 0.008" />
+      </geometry>
+      <material name="stand_lower_arm">
+        <color rgba="0.48 0.52 0.58 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="camera_stand_mount_joint" type="fixed">
+    <parent link="base_link" />
+    <child link="camera_stand_link" />
+    <origin xyz="0.200 0 0.4515" rpy="0 0 0" />
+  </joint>
+  <link name="rgb_camera_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.012 0.026 0.025" />
+      </geometry>
+      <material name="rgb_camera_pcb">
+        <color rgba="0.10 0.48 0.25 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0.008 0 0" rpy="0 1.57079632679 0" />
+      <geometry>
+        <cylinder radius="0.007" length="0.008" />
+      </geometry>
+      <material name="rgb_camera_lens">
+        <color rgba="0.08 0.09 0.12 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="rgb_camera_mount_joint" type="fixed">
+    <parent link="camera_stand_link" />
+    <child link="rgb_camera_link" />
+    <origin xyz="0.051 0 0.085" rpy="0 0 0" />
+  </joint>
+  <link name="rgb_camera_optical_frame" />
+  <joint name="rgb_camera_optical_joint" type="fixed">
+    <parent link="rgb_camera_link" />
+    <child link="rgb_camera_optical_frame" />
+    <origin xyz="0.012 0 0" rpy="-1.57079632679 0 -1.57079632679" />
+  </joint>
+  <link name="thermal_camera_tilt_link">
+    <visual>
+      <origin xyz="0.012 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.016 0.040 0.031" />
+      </geometry>
+      <material name="thermal_pcb">
+        <color rgba="0.05 0.35 0.20 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0.023 0 0" rpy="0 1.57079632679 0" />
+      <geometry>
+        <cylinder radius="0.008" length="0.010" />
+      </geometry>
+      <material name="thermal_lens">
+        <color rgba="0.07 0.07 0.08 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="thermal_camera_pitch_joint" type="revolute">
+    <parent link="camera_stand_link" />
+    <child link="thermal_camera_tilt_link" />
+    <origin xyz="0.055 0 0.017" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit lower="-0.523599" upper="0.523599" effort="1.0" velocity="1.0" />
+  </joint>
+  <link name="thermal_camera_optical_frame" />
+  <joint name="thermal_camera_optical_joint" type="fixed">
+    <parent link="thermal_camera_tilt_link" />
+    <child link="thermal_camera_optical_frame" />
+    <origin xyz="0.028 0 0" rpy="-1.57079632679 0 -1.57079632679" />
+  </joint>
+</robot>

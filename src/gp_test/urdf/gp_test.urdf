@@ -1,0 +1,481 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="Car.SLDASM">
+  <link name="base_link" />
+  <joint name="base_link_to_Car_Center" type="fixed">
+    <parent link="base_link" />
+    <child link="Car_Center" />
+    <origin xyz="0 0 0.1495" rpy="-1.57079632679 0 -1.57079632679" />
+  </joint>
+  <link name="Car_Center">
+    <inertial>
+      <origin xyz="0.013234 -0.070332 -0.0014796" rpy="0 0 0" />
+      <mass value="9.4689" />
+      <inertia ixx="0.13302" ixy="-2.4301E-05" ixz="1.3937E-05" iyy="0.18244" iyz="4.5325E-05" izz="0.065503" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gp_test/meshes/Car_Center.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gp_test/meshes/Car_Center.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="FR_Wheel">
+    <inertial>
+      <origin xyz="-0.0039543 1.1846E-06 8.0769E-15" rpy="0 0 0" />
+      <mass value="5.5536" />
+      <inertia ixx="0.018183" ixy="5.5986E-13" ixz="-5.23E-19" iyy="0.009822" iyz="-2.9322E-18" izz="0.0098219" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gp_test/meshes/FR_Wheel.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.77647 0.75686 0.73725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gp_test/meshes/FR_Wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="FR_Wheel_joint" type="continuous">
+    <origin xyz="0.267 0.022 0.185" rpy="0 0 0" />
+    <parent link="Car_Center" />
+    <child link="FR_Wheel" />
+    <axis xyz="1 0 0" />
+  </joint>
+  <link name="FL_Wheel">
+    <inertial>
+      <origin xyz="0.0040343 1.1846E-06 -1.0825E-15" rpy="0 0 0" />
+      <mass value="5.5536" />
+      <inertia ixx="0.018183" ixy="-5.5986E-13" ixz="2.9045E-18" iyy="0.009822" iyz="-2.4239E-18" izz="0.0098219" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gp_test/meshes/FL_Wheel.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.77647 0.75686 0.73725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gp_test/meshes/FL_Wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="FL_Wheel_joint" type="continuous">
+    <origin xyz="-0.267 0.022 0.185" rpy="0 0 0" />
+    <parent link="Car_Center" />
+    <child link="FL_Wheel" />
+    <axis xyz="1 0 0" />
+  </joint>
+  <link name="RR_Wheel">
+    <inertial>
+      <origin xyz="-0.0039434 1.1846E-06 3.797E-14" rpy="0 0 0" />
+      <mass value="5.5536" />
+      <inertia ixx="0.018183" ixy="5.5987E-13" ixz="-6.9232E-18" iyy="0.009822" iyz="1.8231E-18" izz="0.0098219" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gp_test/meshes/RR_Wheel.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.77647 0.75686 0.73725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gp_test/meshes/RR_Wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="RR_Wheel_joint" type="continuous">
+    <origin xyz="0.267 0.022 -0.185" rpy="0 0 0" />
+    <parent link="Car_Center" />
+    <child link="RR_Wheel" />
+    <axis xyz="1 0 0" />
+  </joint>
+  <link name="RL_Wheel">
+    <inertial>
+      <origin xyz="0.0039434 1.1846E-06 3.5416E-14" rpy="0 0 0" />
+      <mass value="5.5536" />
+      <inertia ixx="0.018183" ixy="-5.5986E-13" ixz="-8.4275E-18" iyy="0.009822" iyz="3.929E-18" izz="0.0098219" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gp_test/meshes/RL_Wheel.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.776 0.756 0.737 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gp_test/meshes/RL_Wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="RL_Wheel_joint" type="continuous">
+    <origin xyz="-0.267 0.022 -0.185" rpy="0 0 0" />
+    <parent link="Car_Center" />
+    <child link="RL_Wheel" />
+    <axis xyz="1 0 0" />
+  </joint>
+  <link name="lidar_bracket_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.08" />
+      <inertia ixx="8.000000000000001e-06" iyy="8.000000000000001e-06" izz="8.000000000000001e-06" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.060 0.090 0.005" />
+      </geometry>
+      <material name="inclined_mount_plate">
+        <color rgba="0.22 0.25 0.29 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0.014" rpy="0 0 0" />
+      <geometry>
+        <cylinder radius="0.012" length="0.025" />
+      </geometry>
+      <material name="lidar_short_standoff">
+        <color rgba="0.57 0.61 0.65 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="lidar_bracket_mount_joint" type="fixed">
+    <parent link="base_link" />
+    <child link="lidar_bracket_link" />
+    <origin xyz="0.291 0 0.318" rpy="0 0.94 0" />
+  </joint>
+  <link name="lidar_link">
+    <inertial>
+      <origin xyz="0 0 -0.015" rpy="0 0 0" />
+      <mass value="0.15" />
+      <inertia ixx="1.5e-05" iyy="1.5e-05" izz="1.5e-05" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 -0.015" rpy="0 0 0" />
+      <geometry>
+        <cylinder radius="0.038" length="0.030" />
+      </geometry>
+      <material name="lidar_black">
+        <color rgba="0.10 0.13 0.17 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="lidar_mount_joint" type="fixed">
+    <parent link="lidar_bracket_link" />
+    <child link="lidar_link" />
+    <origin xyz="0 0 0.043" rpy="0 0 0" />
+  </joint>
+  <link name="imu_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.015" />
+      <inertia ixx="1.5e-06" iyy="1.5e-06" izz="1.5e-06" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.028 0.020 0.004" />
+      </geometry>
+      <material name="imu_blue">
+        <color rgba="0.05 0.23 0.75 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="imu_mount_joint" type="fixed">
+    <parent link="base_link" />
+    <child link="imu_link" />
+    <origin xyz="0 0 0.260" rpy="0 0 0" />
+  </joint>
+  <link name="camera_stand_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.2" />
+      <inertia ixx="2e-05" iyy="2e-05" izz="2e-05" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.022 0.028 0.200" />
+      </geometry>
+      <material name="stand_aluminium">
+        <color rgba="0.58 0.62 0.68 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 -0.100" rpy="0 0 0" />
+      <geometry>
+        <box size="0.065 0.065 0.005" />
+      </geometry>
+      <material name="stand_base">
+        <color rgba="0.30 0.33 0.37 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0.021 0 0.085" rpy="0 0 0" />
+      <geometry>
+        <box size="0.042 0.022 0.008" />
+      </geometry>
+      <material name="stand_upper_arm">
+        <color rgba="0.48 0.52 0.58 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0.024 0 0.017" rpy="0 0 0" />
+      <geometry>
+        <box size="0.048 0.022 0.008" />
+      </geometry>
+      <material name="stand_lower_arm">
+        <color rgba="0.48 0.52 0.58 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="camera_stand_mount_joint" type="fixed">
+    <parent link="base_link" />
+    <child link="camera_stand_link" />
+    <origin xyz="0.200 0 0.4515" rpy="0 0 0" />
+  </joint>
+  <link name="rgb_camera_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.02" />
+      <inertia ixx="2.0000000000000003e-06" iyy="2.0000000000000003e-06" izz="2.0000000000000003e-06" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.012 0.026 0.025" />
+      </geometry>
+      <material name="rgb_camera_pcb">
+        <color rgba="0.10 0.48 0.25 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0.008 0 0" rpy="0 1.57079632679 0" />
+      <geometry>
+        <cylinder radius="0.007" length="0.008" />
+      </geometry>
+      <material name="rgb_camera_lens">
+        <color rgba="0.08 0.09 0.12 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="rgb_camera_mount_joint" type="fixed">
+    <parent link="camera_stand_link" />
+    <child link="rgb_camera_link" />
+    <origin xyz="0.051 0 0.085" rpy="0 0 0" />
+  </joint>
+  <link name="rgb_camera_optical_frame" />
+  <joint name="rgb_camera_optical_joint" type="fixed">
+    <parent link="rgb_camera_link" />
+    <child link="rgb_camera_optical_frame" />
+    <origin xyz="0.012 0 0" rpy="-1.57079632679 0 -1.57079632679" />
+  </joint>
+  <link name="thermal_camera_tilt_link">
+    <inertial>
+      <origin xyz="0.012 0 0" rpy="0 0 0" />
+      <mass value="0.050" />
+      <inertia ixx="0.0000107" ixy="0" ixz="0" iyy="0.0000061" iyz="0" izz="0.0000090" />
+    </inertial>
+    <visual>
+      <origin xyz="0.012 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.016 0.040 0.031" />
+      </geometry>
+      <material name="thermal_pcb">
+        <color rgba="0.05 0.35 0.20 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0.023 0 0" rpy="0 1.57079632679 0" />
+      <geometry>
+        <cylinder radius="0.008" length="0.010" />
+      </geometry>
+      <material name="thermal_lens">
+        <color rgba="0.07 0.07 0.08 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.012 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.016 0.040 0.031" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="thermal_camera_pitch_joint" type="revolute">
+    <parent link="camera_stand_link" />
+    <child link="thermal_camera_tilt_link" />
+    <origin xyz="0.055 0 0.017" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit lower="-0.523599" upper="0.523599" effort="1.0" velocity="1.0" />
+  </joint>
+  <link name="thermal_camera_optical_frame" />
+  <joint name="thermal_camera_optical_joint" type="fixed">
+    <parent link="thermal_camera_tilt_link" />
+    <child link="thermal_camera_optical_frame" />
+    <origin xyz="0.028 0 0" rpy="-1.57079632679 0 -1.57079632679" />
+  </joint>
+  <gazebo reference="lidar_bracket_mount_joint">
+    <preserveFixedJoint>true</preserveFixedJoint>
+  </gazebo>
+  <gazebo reference="lidar_mount_joint">
+    <preserveFixedJoint>true</preserveFixedJoint>
+  </gazebo>
+  <gazebo reference="imu_mount_joint">
+    <preserveFixedJoint>true</preserveFixedJoint>
+  </gazebo>
+  <gazebo reference="camera_stand_mount_joint">
+    <preserveFixedJoint>true</preserveFixedJoint>
+  </gazebo>
+  <gazebo reference="rgb_camera_mount_joint">
+    <preserveFixedJoint>true</preserveFixedJoint>
+  </gazebo>
+  <gazebo reference="rgb_camera_optical_joint">
+    <preserveFixedJoint>true</preserveFixedJoint>
+  </gazebo>
+  <gazebo reference="thermal_camera_optical_joint">
+    <preserveFixedJoint>true</preserveFixedJoint>
+  </gazebo>
+  <gazebo>
+    <plugin filename="gz-sim-diff-drive-system" name="gz::sim::systems::DiffDrive">
+      <left_joint>FL_Wheel_joint</left_joint>
+      <left_joint>RL_Wheel_joint</left_joint>
+      <right_joint>FR_Wheel_joint</right_joint>
+      <right_joint>RR_Wheel_joint</right_joint>
+      <wheel_separation>0.534</wheel_separation>
+      <wheel_radius>0.1275</wheel_radius>
+      <odom_publish_frequency>30</odom_publish_frequency>
+      <max_linear_acceleration>0.6</max_linear_acceleration>
+      <max_angular_acceleration>1.5</max_angular_acceleration>
+      <max_linear_velocity>0.5</max_linear_velocity>
+      <max_angular_velocity>1.5</max_angular_velocity>
+      <topic>cmd_vel</topic>
+      <odom_topic>odom</odom_topic>
+      <tf_topic>/tf</tf_topic>
+      <frame_id>odom</frame_id>
+      <child_frame_id>base_link</child_frame_id>
+    </plugin>
+    <plugin filename="gz-sim-joint-state-publisher-system" name="gz::sim::systems::JointStatePublisher">
+      <topic>joint_states</topic>
+      <update_rate>30</update_rate>
+      <joint_name>FL_Wheel_joint</joint_name>
+      <joint_name>FR_Wheel_joint</joint_name>
+      <joint_name>RL_Wheel_joint</joint_name>
+      <joint_name>RR_Wheel_joint</joint_name>
+      <joint_name>thermal_camera_pitch_joint</joint_name>
+    </plugin>
+    <plugin filename="gz-sim-sensors-system" name="gz::sim::systems::Sensors">
+      <render_engine>ogre2</render_engine>
+    </plugin>
+    <plugin filename="gz-sim-imu-system" name="gz::sim::systems::Imu" />
+    <plugin filename="gz-sim-joint-position-controller-system" name="gz::sim::systems::JointPositionController">
+      <joint_name>thermal_camera_pitch_joint</joint_name>
+      <topic>thermal_camera_angle</topic>
+      <p_gain>4.0</p_gain>
+      <i_gain>0.0</i_gain>
+      <d_gain>0.1</d_gain>
+      <cmd_max>2.0</cmd_max>
+      <cmd_min>-2.0</cmd_min>
+    </plugin>
+  </gazebo>
+  <gazebo reference="lidar_link">
+    <sensor name="ld06_scan" type="gpu_lidar">
+      <pose>0 0 0 0 0 0</pose>
+      <always_on>true</always_on>
+      <visualize>true</visualize>
+      <update_rate>10</update_rate>
+      <topic>scan</topic>
+      <gz_frame_id>lidar_link</gz_frame_id>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>720</samples>
+            <resolution>1</resolution>
+            <min_angle>-3.14159265</min_angle>
+            <max_angle>3.14159265</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.05</min>
+          <max>12.0</max>
+          <resolution>0.01</resolution>
+        </range>
+      </ray>
+    </sensor>
+  </gazebo>
+  <gazebo reference="imu_link">
+    <sensor name="bno055_imu" type="imu">
+      <always_on>true</always_on>
+      <update_rate>100</update_rate>
+      <topic>imu/data</topic>
+      <gz_frame_id>imu_link</gz_frame_id>
+    </sensor>
+  </gazebo>
+  <gazebo reference="rgb_camera_link">
+    <sensor name="rgb_camera" type="camera">
+      <pose>0.012 0 0 0 0 0</pose>
+      <always_on>true</always_on>
+      <update_rate>20</update_rate>
+      <topic>rgb/image_raw</topic>
+      <gz_frame_id>rgb_camera_optical_frame</gz_frame_id>
+      <camera>
+        <horizontal_fov>1.308997</horizontal_fov>
+        <image>
+          <width>1280</width>
+          <height>720</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.05</near>
+          <far>25.0</far>
+        </clip>
+      </camera>
+    </sensor>
+  </gazebo>
+  <gazebo reference="thermal_camera_tilt_link">
+    <sensor name="thermal_camera_visual" type="camera">
+      <pose>0.028 0 0 0 0 0</pose>
+      <always_on>true</always_on>
+      <update_rate>10</update_rate>
+      <topic>thermal/image_raw</topic>
+      <gz_frame_id>thermal_camera_optical_frame</gz_frame_id>
+      <camera>
+        <horizontal_fov>1.57079632679</horizontal_fov>
+        <image>
+          <width>320</width>
+          <height>240</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.05</near>
+          <far>20.0</far>
+        </clip>
+      </camera>
+    </sensor>
+  </gazebo>
+</robot>
