@@ -50,22 +50,11 @@ def generate_launch_description():
     )
     pkg_share = get_package_share_directory('dummybot_localization')
 
-    ekf_node = Node(
-       package='robot_localization',
-       executable='ekf_node',
-       name='ekf_filter_node',
-       output='screen',
-       parameters=[
-          os.path.join(pkg_share, 'config', 'ekf.yaml'),
-          {'use_sim_time': True}
-        ]
-    )
 
     # Add everything to the LaunchDescription
     return LaunchDescription([
         map_server_node,
         amcl_node,
         lifecycle_manager_node,
-        ekf_node,
         rviz_node, 
     ])
