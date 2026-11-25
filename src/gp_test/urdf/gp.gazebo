@@ -27,7 +27,7 @@
       <left_joint>RL_Wheel_joint</left_joint>
       <right_joint>FR_Wheel_joint</right_joint>
       <right_joint>RR_Wheel_joint</right_joint>
-      <wheel_separation>0.534</wheel_separation>
+      <wheel_separation>0.75</wheel_separation>
       <wheel_radius>0.1275</wheel_radius>
       <odom_publish_frequency>30</odom_publish_frequency>
       <max_linear_acceleration>0.6</max_linear_acceleration>
@@ -92,7 +92,7 @@
     <sensor name="bno055_imu" type="imu">
       <always_on>true</always_on>
       <update_rate>100</update_rate>
-      <topic>imu/data</topic>
+      <topic>imu</topic>
       <gz_frame_id>imu_link</gz_frame_id>
     </sensor>
   </gazebo>

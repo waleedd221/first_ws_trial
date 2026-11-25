@@ -50,11 +50,11 @@
       </geometry>
     </collision>
   </link>
-  <joint name="FR_Wheel" type="continuous">
+  <joint name="FR_Wheel_joint" type="continuous">
     <origin xyz="0.267 0.022 0.185" rpy="0 0 0" />
     <parent link="Car_Center" />
     <child link="FR_Wheel" />
-    <axis xyz="1 0 0" />
+    <axis xyz="-1 0 0" />
   </joint>
   <link name="FL_Wheel">
     <inertial>
@@ -78,11 +78,11 @@
       </geometry>
     </collision>
   </link>
-  <joint name="FL_Wheel" type="continuous">
+  <joint name="FL_Wheel_joint" type="continuous">
     <origin xyz="-0.267 0.022 0.185" rpy="0 0 0" />
     <parent link="Car_Center" />
     <child link="FL_Wheel" />
-    <axis xyz="1 0 0" />
+    <axis xyz="-1 0 0" />
   </joint>
   <link name="RR_Wheel">
     <inertial>
@@ -106,11 +106,11 @@
       </geometry>
     </collision>
   </link>
-  <joint name="RR_Wheel" type="continuous">
+  <joint name="RR_Wheel_joint" type="continuous">
     <origin xyz="0.267 0.022 -0.185" rpy="0 0 0" />
     <parent link="Car_Center" />
     <child link="RR_Wheel" />
-    <axis xyz="1 0 0" />
+    <axis xyz="-1 0 0" />
   </joint>
   <link name="RL_Wheel">
     <inertial>
@@ -134,11 +134,11 @@
       </geometry>
     </collision>
   </link>
-  <joint name="RL_Wheel" type="continuous">
+  <joint name="RL_Wheel_joint" type="continuous">
     <origin xyz="-0.267 0.022 -0.185" rpy="0 0 0" />
     <parent link="Car_Center" />
     <child link="RL_Wheel" />
-    <axis xyz="1 0 0" />
+    <axis xyz="-1 0 0" />
   </joint>
   <link name="lidar_bracket_link">
     <visual>
@@ -163,7 +163,7 @@
   <joint name="lidar_bracket_mount_joint" type="fixed">
     <parent link="base_link" />
     <child link="lidar_bracket_link" />
-    <origin xyz="0.291 0 0.318" rpy="0 0.94 0" />
+    <origin xyz="0 0 0.318" rpy="0 0 0" />
   </joint>
   <link name="lidar_link">
     <visual>
@@ -238,7 +238,7 @@
   <joint name="camera_stand_mount_joint" type="fixed">
     <parent link="base_link" />
     <child link="camera_stand_link" />
-    <origin xyz="0.200 0 0.4515" rpy="0 0 0" />
+    <origin xyz="0.200 0.150 0.4515" rpy="0 0 0" />
   </joint>
   <link name="rgb_camera_link">
     <visual>

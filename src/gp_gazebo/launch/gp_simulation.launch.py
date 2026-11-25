@@ -4,6 +4,7 @@ import os
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
 from launch.actions import IncludeLaunchDescription, SetEnvironmentVariable
+from launch_ros.actions import Node
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 
 def generate_launch_description():
@@ -35,12 +36,19 @@ def generate_launch_description():
             os.path.join(gp_gazebo_pkg, 'launch', 'spawn.launch.py')
         )
     )
-
+    scan_filter = Node(
+        package='laser_filters',
+        executable='scan_to_scan_filter_chain',
+        name='scan_filter',
+        parameters=[os.path.join(gp_gazebo_pkg, 'config', 'scan_filter.yaml'),
+                    {'use_sim_time': True}],
+        output='screen')
     ld = LaunchDescription()
 
     ld.add_action(set_resource_path)   
     ld.add_action(robot_description)
     ld.add_action(robot_world)
     ld.add_action(robot_spawner)
+    ld.add_action(scan_filter)
 
     return ld

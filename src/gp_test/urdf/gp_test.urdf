@@ -54,7 +54,7 @@
     <origin xyz="0.267 0.022 0.185" rpy="0 0 0" />
     <parent link="Car_Center" />
     <child link="FR_Wheel" />
-    <axis xyz="1 0 0" />
+    <axis xyz="-1 0 0" />
   </joint>
   <link name="FL_Wheel">
     <inertial>
@@ -82,7 +82,7 @@
     <origin xyz="-0.267 0.022 0.185" rpy="0 0 0" />
     <parent link="Car_Center" />
     <child link="FL_Wheel" />
-    <axis xyz="1 0 0" />
+    <axis xyz="-1 0 0" />
   </joint>
   <link name="RR_Wheel">
     <inertial>
@@ -110,7 +110,7 @@
     <origin xyz="0.267 0.022 -0.185" rpy="0 0 0" />
     <parent link="Car_Center" />
     <child link="RR_Wheel" />
-    <axis xyz="1 0 0" />
+    <axis xyz="-1 0 0" />
   </joint>
   <link name="RL_Wheel">
     <inertial>
@@ -138,7 +138,7 @@
     <origin xyz="-0.267 0.022 -0.185" rpy="0 0 0" />
     <parent link="Car_Center" />
     <child link="RL_Wheel" />
-    <axis xyz="1 0 0" />
+    <axis xyz="-1 0 0" />
   </joint>
   <link name="lidar_bracket_link">
     <inertial>
@@ -168,7 +168,7 @@
   <joint name="lidar_bracket_mount_joint" type="fixed">
     <parent link="base_link" />
     <child link="lidar_bracket_link" />
-    <origin xyz="0.291 0 0.318" rpy="0 0.94 0" />
+    <origin xyz="0 0 0.318" rpy="0 0 0" />
   </joint>
   <link name="lidar_link">
     <inertial>
@@ -258,7 +258,7 @@
   <joint name="camera_stand_mount_joint" type="fixed">
     <parent link="base_link" />
     <child link="camera_stand_link" />
-    <origin xyz="0.200 0 0.4515" rpy="0 0 0" />
+    <origin xyz="0.200 0.150 0.4515" rpy="0 0 0" />
   </joint>
   <link name="rgb_camera_link">
     <inertial>
@@ -367,7 +367,7 @@
       <left_joint>RL_Wheel_joint</left_joint>
       <right_joint>FR_Wheel_joint</right_joint>
       <right_joint>RR_Wheel_joint</right_joint>
-      <wheel_separation>0.534</wheel_separation>
+      <wheel_separation>0.75</wheel_separation>
       <wheel_radius>0.1275</wheel_radius>
       <odom_publish_frequency>30</odom_publish_frequency>
       <max_linear_acceleration>0.6</max_linear_acceleration>
@@ -432,7 +432,7 @@
     <sensor name="bno055_imu" type="imu">
       <always_on>true</always_on>
       <update_rate>100</update_rate>
-      <topic>imu/data</topic>
+      <topic>imu</topic>
       <gz_frame_id>imu_link</gz_frame_id>
     </sensor>
   </gazebo>
