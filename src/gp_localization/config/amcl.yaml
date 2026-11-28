@@ -40,15 +40,15 @@ amcl:
     lambda_short: 0.1       # Exponential decay parameter for z_short
 
     # --- PARTICLE FILTER CONFIGURATION ---
-    max_particles: 8000     # Upper limit of the cloud size
-    min_particles: 200      # Lower limit (it won't shrink smaller than this)
+    max_particles: 2000     # Upper limit of the cloud size
+    min_particles: 500      # Lower limit (it won't shrink smaller than this)
     pf_err: 0.05            # Allowed error between true distribution and particle estimate
     pf_z: 0.99              # Quantile for the pf_err calculation
 
     # --- RECOVERY (Kidnapped Robot Problem) ---
     # Used to add random particles if the robot realizes it is lost
-    recovery_alpha_fast: 0.0 # Rate for recovering from being totally lost
-    recovery_alpha_slow: 0.0 # Rate for recovering from slight drift
+    recovery_alpha_fast: 0.1 # Rate for recovering from being totally lost
+    recovery_alpha_slow: 0.001 # Rate for recovering from slight drift
 
     # --- UPDATE TRIGGERS ---
     # How often to run the "Correction" step

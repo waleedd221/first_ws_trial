@@ -7,7 +7,7 @@ from ament_index_python.packages import get_package_share_directory
 # Paths to configuration files
 nav2_yaml = os.path.join(get_package_share_directory('gp_localization'), 'config', 'amcl.yaml')
 map_file = os.path.join(get_package_share_directory('gp_localization'), 'maps', 'map.yaml')
-rviz_config = os.path.join(get_package_share_directory('gp_localization'), 'config', 'amcl.rviz')
+rviz_config = os.path.join(get_package_share_directory('gp_localization'), 'rviz', 'amcl.rviz')
 
 def generate_launch_description():
     # Define the RViz node
