@@ -20,11 +20,11 @@
   direction: GZ_TO_ROS
   
   
-- ros_topic_name: "tf"
-  gz_topic_name: "tf"
-  ros_type_name: "tf2_msgs/msg/TFMessage"
-  gz_type_name: "gz.msgs.Pose_V"
-  direction: GZ_TO_ROS
+#- ros_topic_name: "tf"
+  #gz_topic_name: "tf"
+  #ros_type_name: "tf2_msgs/msg/TFMessage"
+  #gz_type_name: "gz.msgs.Pose_V"
+  #direction: GZ_TO_ROS
 
 
 # gz topic subscribed to by DiffDrive plugin
@@ -73,3 +73,4 @@
   direction: ROS_TO_GZ
   gz_type_name: "gz.msgs.Double"
   direction: ROS_TO_GZ
+

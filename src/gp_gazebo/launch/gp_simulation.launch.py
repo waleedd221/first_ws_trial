@@ -43,6 +43,16 @@ def generate_launch_description():
         parameters=[os.path.join(gp_gazebo_pkg, 'config', 'scan_filter.yaml'),
                     {'use_sim_time': True}],
         output='screen')
+
+    ekf = Node(
+        package='robot_localization',
+        executable='ekf_node',
+        name='ekf_filter_node',
+        output='screen',
+        parameters=[os.path.join(gp_gazebo_pkg, 'config', 'ekf.yaml'),
+                 {'use_sim_time': True}])
+
+
     ld = LaunchDescription()
 
     ld.add_action(set_resource_path)   
@@ -50,5 +60,6 @@ def generate_launch_description():
     ld.add_action(robot_world)
     ld.add_action(robot_spawner)
     ld.add_action(scan_filter)
+    ld.add_action(ekf)
 
     return ld
